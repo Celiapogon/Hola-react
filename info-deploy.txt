@@ -33,3 +33,44 @@ https://tu-usuario.github.io/nombre-del-repo/
     npm run deploy
     
 para actualizar la página.
+
+
+Sí, puedes hacer todo eso con Yarn sin problemas. Aquí está la versión con Yarn:
+
+1️⃣ Instalar gh-pages con Yarn
+bash
+Copiar
+Editar
+yarn add gh-pages --dev
+2️⃣ Configurar package.json
+Asegúrate de que package.json tenga esto:
+
+json
+Copiar
+Editar
+"homepage": "https://tu-usuario.github.io/nombre-del-repo",
+"scripts": {
+  "predeploy": "yarn build",
+  "deploy": "gh-pages -d build"
+}
+3️⃣ Hacer el Deploy
+Ejecuta:
+
+bash
+Copiar
+Editar
+yarn deploy
+Esto:
+
+Compila la app (yarn build).
+Crea la rama gh-pages y sube los archivos de build/.
+4️⃣ Activar GitHub Pages
+Después del deploy, ve a Settings > Pages en tu repositorio y selecciona gh-pages.
+
+5️⃣ Acceder a tu app
+Después de unos minutos, tu app estará en:
+
+arduino
+Copiar
+Editar
+https://tu-usuario.github.io/nombre-del-repo/
