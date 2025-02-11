@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Geologica:wght@100..900&family=Indie+Flower&family=Original+Surfer&family=Playpen+Sans:wght@100..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Estilos Globales */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Asegura que el padding y border no afecten el tamaño total */
+}
+
+body {
+    font-family: "Faculty Glyphic", serif;
+    font-family: "Playpen Sans", serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(240, 240, 240);
+}
+
+/* Contenedor principal */
+.contenedor-principal {
+    background-color: rgb(212, 241, 204);
+    margin: 30px auto;
+    padding: 40px;
+    border: 2.5px solid rgb(51, 146, 25);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    text-align: center;
+}
+
+.contenedor-principal:hover {
+    background-color: rgb(235, 250, 231);
+}
+
+/* Título del Blog */
+.titulo-blog {
+    background-color: hwb(107 50% 7% / 0.5);
+    border-radius: 30px;
+    padding: 2%;
+    margin-bottom: 20px;
+    box-shadow: 3px 5px 2px hwb(107 45% 5%);
+    color: rgb(26, 58, 26);
+    font-family: "Indie Flower", serif;
+    font-size: 2.5em;
+    text-align: center;
+    width: 100%;
+}
+
+/* Instrucciones y párrafos */
+.instrucciones, p {
+    font-family: "Playpen Sans", serif;
+}
+
+/* Contenedor de entrada (formularios) */
+.contenedor-entrada {
+    margin: 5% auto;
+    padding: 15px;
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;    
+    background-color: hwb(107 50% 7% / 0.5);
+    border-radius: 15px;
+    border: 1px solid green;
+}
+
+.input-titulo,
+.input-categoria {
+    margin-left: 10px;
+    padding: 10px;
+    width: 80%;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+.input-categoria {
+    text-align: justify;
+    color: rgb(13, 36, 3);
+    background-color: hwb(107 75% 11% / 0.493);
+    box-shadow: 2px 2px 8px black;
+    
+}
+
+/* Botón para agregar nueva nota */
+.boton-nueva-nota {
+    background-color: hwb(107 10% 9% / 0.493);
+    box-shadow: 2px 2px 8px rgb(52, 136, 3);
+    font-family: "Playpen Sans", serif;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    width: 40%;
+    margin: auto;
+}
+
+/* Contenedor de notas escritas */
+.contenedor-notas-escritas {
+    background-color: hwb(105 94% 5% / 0.5);
+    border-radius: 15px;
+    border: 1px solid green;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.nota-individual {
+    margin: 10px 0;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    
+    }
+
+/* Títulos de las notas y categorías */
+.titulo-nota {
+    font-weight: bold;
+    color:rgba(0, 27, 4, 0.911);
+}
+li{
+    
+    list-style: none;
+}
+.categoria-nota {
+    font-size: 0.9em;
+    color: gray;
+    }
+
+
+/* Botones de edición y eliminación */
+.boton-editar, .boton-borrar {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin: 10px;
+    
+}
+.contenido-nota{
+    color: rgb(39, 47, 59);
+    font-weight: 300;
+
+}
+
+/* Media Queries para responsive */
+@media screen and (max-width: 768px) {
+    .contenedor-principal {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .titulo-blog {
+        font-size: 2em;
+    }
+
+    .contenedor-entrada {
+        padding: 15px;
+    }
+
+    .input-titulo, .input-categoria {
+        width: 100%;
+        margin-left: 0; /* Elimina el margen izquierdo */
+    }
+
+    .contenedor-notas-escritas {
+        padding: 10px;
+    }
+
+    .boton-nueva-nota {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .titulo-blog {
+        font-size: 1.8em;
+    }
+
+    .contenedor-principal {
+        padding: 15px;
+    }
+
+    .contenedor-entrada {
+        margin: 0;
+    }
+
+    .boton-nueva-nota {
+        font-size: 0.9em;
+    }
+}
+.buscar-notas{
+    margin: 10px auto;    
+    font-family: "Playpen Sans", serif;
+
+
+}
+.nota-green {
+    background-color: rgba(237, 132, 128, 0.568);
+    box-shadow: 1px 1px 6px black;
+}
+
+.nota-yellow {
+    background-color: rgba(236, 238, 118, 0.596);
+    box-shadow: 1px 1px 6px black;
+}
+
+.nota-blue {
+    background-color: rgba(138, 211, 230, 0.76);
+    box-shadow: 1px 1px 6px black;
+}
+
+.nota-purple {
+    background-color: rgba(241, 135, 241, 0.616);
+    box-shadow: 1px 1px 6px black;
+}

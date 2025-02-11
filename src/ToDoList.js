@@ -8,7 +8,7 @@ export default function ToDoList() {
       const tareasGuardadas = localStorage.getItem('tareas');
       return tareasGuardadas ? JSON.parse(tareasGuardadas) : [];
     });
-     
+    
     const [nuevaTarea, setNuevaTarea] = useState('');
 
 
@@ -16,6 +16,31 @@ export default function ToDoList() {
      useEffect(() => {
       localStorage.setItem ("tareas",JSON.stringify(tareas));
      }, [tareas]);
+
+     useEffect (() =>{
+      const tareasGuardadas = JSON.parse(localStorage.getItem("tareas")) || [];
+      setTareas(tareasGuardadas);
+     },[]);
+
+     //Función para habilitar la edición
+     const editarTarea=(id,nuevoTexto) =>{
+      setTareas(
+        tareas.map((tarea) =>
+          tarea.id ==id? {...tarea,texto:nuevoTexto, editando:false}:tarea
+      ) );     }
+
+
+      //Funcion para activar el modo edicion
+      const activarEdicion =(id) => {
+        setTareas(
+          tareas.map((tarea) =>
+            tarea.id === id? {... tarea, editando:true}:tarea
+        )        );
+      };
+
+      //Funcion contador de tareas completadas y pendientes 
+      const tareasCompletadas = tareas.filter((tarea) => tarea.completado).length;
+      const tareasPendientes = tareas.length-tareasCompletadas;
 
 
       // Función para agregar una nueva tarea
@@ -25,6 +50,7 @@ export default function ToDoList() {
           id: Date.now(), // ID único basado en la hora actual
           texto: nuevaTarea,
           completada: false,
+          editando:false
         };
         setTareas ([...tareas, tareaNueva]);
         setNuevaTarea (''); // Limpiar el campo de entrada o input
@@ -41,8 +67,8 @@ export default function ToDoList() {
           tareas.map((tarea)=>
             tarea.id === id ? {...tarea, completado: !tarea.completado} : tarea
           )
-        );
-        console.log("Estado actualizado:",tareas);
+        );    
+            console.log("Estado actualizado:",tareas);
       };
 
       return (
@@ -61,17 +87,26 @@ export default function ToDoList() {
             </button>            
           </div>
           <div className='contenedorTareas'>
-          <p>Tareas: </p>
-            <ul>
+            <ul className='listaTareasUl'>
               
               {tareas.map((tarea) => (
+                
                 <li
                 key={tarea.id}
                 className= {tarea.completado ? "tarea-completada":"tarea-no-completada"} 
                 >
-                  <span>
+                  {tarea.editando ? (
+                    <input
+                    type='text'
+                    defaultValue={tarea.texto}
+                    onBlur={(e) => editarTarea(tarea.id, e.target.value) }
+                    autoFocus/>
+                    
+                  ) : (    
+                  <span onClick={()=> activarEdicion(tarea.id)}>
                     {tarea.texto}
                   </span>
+                  )}
                   <button
                   onClick={()=>toggleCompletado(tarea.id)}
                   className={tarea.completado ? "boton-completado-si":"boton-completado-no"}
@@ -88,6 +123,11 @@ export default function ToDoList() {
                 </li>
               ))}              
             </ul>
+            <div className='contador-tareas'>
+              <p> Tareas completadas:  {tareasCompletadas}</p>
+              <p> Tareas pendientes: {tareasPendientes} </p>
+              <p> Tareas totales: {tareas.length}</p>
+            </div>
           </div>
         </div>  
       );

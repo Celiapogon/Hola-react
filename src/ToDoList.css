@@ -1,20 +1,28 @@
-*{
-    margin:0;
+/* Estilos generales */
+* {
+    margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.contenedorPrincipal{
+/* Contenedor principal */
+.contenedorPrincipal {
     display: flex;
     text-align: center;
     align-items: center;
     flex-direction: column;
     padding: 20px;
     margin: 30px;
-    width: auto;
+    width: 100%;
     flex-wrap: wrap;
+    border: 2px solid rgb(175, 135, 4);
+    border-radius: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
 }
-.titulo{
+
+/* Título */
+.titulo {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2em;
     text-align: center;
@@ -23,112 +31,183 @@
     border-radius: 50px;
     box-shadow: 2px 3px 10px black;
     text-shadow: 2px 2px 6px rgb(205, 211, 235);
-    text-overflow: ellipsis;
-    width:70vw;
+    width: 70vw;
     margin: 10px;
     padding: 10px;
 }
 
-.contenedorInput{
+/* Contenedor de entrada */
+.contenedorInput {
     margin: 1%;
     padding: 15px;
     border: 1px rgb(230, 166, 83) solid;
     border-radius: 10px;
     background-color: rgb(242, 232, 206);
     display: flex;
-    align-content: space-between;
+    align-items: center;
     flex-direction: row;
-    gap: 5px;
-
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
 }
-.input{
+
+.input {
     border-radius: 15px;
     font-size: 1em;
+    width: 60%;
 }
-.botonAgregar{
+
+.botonAgregar {
     background-color: rgb(245, 197, 38);
     padding: 1%;
     font-size: 1em;
     border-radius: 15px;
-}
-.botonAgregar:hover{
+    width: 30%;
     cursor: pointer;
+}
+
+.botonAgregar:hover {
     background-color: hsla(46, 91%, 55%, 0.601);
     font-weight: bold;
 }
-.botonAgregar:active{
-    cursor: pointer;
+
+.botonAgregar:active {
     background-color: hsla(46, 91%, 55%, 0.226);
     color: brown;
 }
 
-.contenedorTareas{
+/* Contenedor de tareas */
+.contenedorTareas {
     background-color: rgb(242, 232, 206);
     border: 2px solid rgb(175, 135, 4);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;    
-    text-align: justify;
     padding: 10px;
     margin: 5%;
-    width: 70%;
-    height: fit-content;
-
-}
-.contenedorTareas p{
-    display: block;
-    align-self: start;
-    margin-bottom: 10px;
-    font-weight: bold;
-    text-decoration: underline;
+    width: 90%;
+    margin-bottom: 2%;
 }
 
+.listaTareasUl {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+/* Tareas completadas y no completadas */
 .tarea-completada {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    list-style: none;
     text-decoration: line-through;
+    color: grey;
 }
 
-.tarea-no-completada{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
-    list-style: none;
-    margin-right: 2px;
+.tarea-no-completada {
     font-weight: bold;
 }
 
-
-
-.botonEliminar{
-    background-color: hwb(0 0% 0%);
+/* Botones */
+.botonEliminar {
+    background-color: hwb(0 23% 4%);
     padding: 1%;
     border-radius: 20px;
-
-}
-.botonEliminar:hover{
     cursor: pointer;
+}
+
+.botonEliminar:hover {
     background-color: hsla(0, 96%, 69%, 0.992);
     font-weight: bold;
-    
 }
 
-.boton-completado-si{
-    background-color: rgb(11, 209, 11);
+.boton-completado-si {
+    background-color: rgb(130, 237, 130);
     padding: 1%;
-    margin:0px  10px;
+    margin: 0px 10px;
     font-size: 1em;
     border-radius: 15px;
-    }
-    .boton-completado-si:hover{
-        cursor: pointer;
-    }
-.boton-completado-no{
+    cursor: pointer;
+}
+
+.boton-completado-no {
     background-color: rgb(242, 245, 38);
     padding: 1%;
-    margin:0px  10px;
+    margin: 0px 10px;
     font-size: 1em;
     border-radius: 15px;
-}
-.boton-completado-no:hover{
     cursor: pointer;
+}
+
+/* Contador de tareas */
+.contador-tareas {
+    display: flex;
+    text-align: justify;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 20px;
+    margin-top: 30%;
+}
+
+.contador-tareas p {
+    font-weight: normal;
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .contenedorInput {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input {
+        width: 80%;
+    }
+
+    .botonAgregar {
+        width: 80%;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .contenedorTareas {
+        margin: 5%;
+        width: 90%;
+    }
+
+    .listaTareasUl li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .contador-tareas {
+        margin-top: 20%;
+    }
+}
+
+/* Estilos para pantallas más grandes (tablets y escritorios) */
+@media (min-width: 769px) {
+    .contenedorInput {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .input {
+        width: 60%;
+    }
+
+    .botonAgregar {
+        width: 25%;
+        margin-left: 10px;
+    }
+
+    .contenedorTareas {
+        margin: 5%;
+        width: 70%;
+    }
+
+    .listaTareasUl li {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
