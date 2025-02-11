@@ -47,7 +47,7 @@
     align-items: center;
     flex-direction: row;
     gap: 10px;
-    width: 60%;
+    width: 100%;
     height: fit-content;
     justify-content: center;
 }
