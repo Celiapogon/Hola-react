@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Hola-react/static/css/main.93b7750a.css",
+    "main.css": "/Hola-react/static/css/main.78f84e51.css",
     "main.js": "/Hola-react/static/js/main.53f803fb.js",
     "index.html": "/Hola-react/index.html",
-    "main.93b7750a.css.map": "/Hola-react/static/css/main.93b7750a.css.map",
+    "main.78f84e51.css.map": "/Hola-react/static/css/main.78f84e51.css.map",
     "main.53f803fb.js.map": "/Hola-react/static/js/main.53f803fb.js.map"
   },
   "entrypoints": [
-    "static/css/main.93b7750a.css",
+    "static/css/main.78f84e51.css",
     "static/js/main.53f803fb.js"
   ]
 }
