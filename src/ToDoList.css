@@ -1,0 +1,134 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.contenedorPrincipal{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 30px;
+    width: auto;
+    flex-wrap: wrap;
+}
+.titulo{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2em;
+    text-align: center;
+    background-color: rgb(230, 181, 117);
+    border: 1px solid rgb(139, 60, 7);
+    border-radius: 50px;
+    box-shadow: 2px 3px 10px black;
+    text-shadow: 2px 2px 6px rgb(205, 211, 235);
+    text-overflow: ellipsis;
+    width:70vw;
+    margin: 10px;
+    padding: 10px;
+}
+
+.contenedorInput{
+    margin: 1%;
+    padding: 15px;
+    border: 1px rgb(230, 166, 83) solid;
+    border-radius: 10px;
+    background-color: rgb(242, 232, 206);
+    display: flex;
+    align-content: space-between;
+    flex-direction: row;
+    gap: 5px;
+
+}
+.input{
+    border-radius: 15px;
+    font-size: 1em;
+}
+.botonAgregar{
+    background-color: rgb(245, 197, 38);
+    padding: 1%;
+    font-size: 1em;
+    border-radius: 15px;
+}
+.botonAgregar:hover{
+    cursor: pointer;
+    background-color: hsla(46, 91%, 55%, 0.601);
+    font-weight: bold;
+}
+.botonAgregar:active{
+    cursor: pointer;
+    background-color: hsla(46, 91%, 55%, 0.226);
+    color: brown;
+}
+
+.contenedorTareas{
+    background-color: rgb(242, 232, 206);
+    border: 2px solid rgb(175, 135, 4);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;    
+    text-align: justify;
+    padding: 10px;
+    margin: 5%;
+    width: 70%;
+    height: fit-content;
+
+}
+.contenedorTareas p{
+    display: block;
+    align-self: start;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.tarea-completada {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    list-style: none;
+    text-decoration: line-through;
+}
+
+.tarea-no-completada{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
+    list-style: none;
+    margin-right: 2px;
+    font-weight: bold;
+}
+
+
+
+.botonEliminar{
+    background-color: hwb(0 0% 0%);
+    padding: 1%;
+    border-radius: 20px;
+
+}
+.botonEliminar:hover{
+    cursor: pointer;
+    background-color: hsla(0, 96%, 69%, 0.992);
+    font-weight: bold;
+    
+}
+
+.boton-completado-si{
+    background-color: rgb(11, 209, 11);
+    padding: 1%;
+    margin:0px  10px;
+    font-size: 1em;
+    border-radius: 15px;
+    }
+    .boton-completado-si:hover{
+        cursor: pointer;
+    }
+.boton-completado-no{
+    background-color: rgb(242, 245, 38);
+    padding: 1%;
+    margin:0px  10px;
+    font-size: 1em;
+    border-radius: 15px;
+}
+.boton-completado-no:hover{
+    cursor: pointer;
+}
